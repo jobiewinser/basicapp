@@ -14,7 +14,7 @@ services:
     ports:
       - "8000:8000"
       - "5678:5678"
-    command: poetry run python manage.py runserver 0.0.0.0:8000
+    command: poetry run python -m debugpy --listen 0.0.0.0:5678 manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
 

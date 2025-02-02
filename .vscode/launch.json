@@ -1,15 +1,21 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Python: Django",
-            "type": "python",
-            "request": "attach",
-            "connect": {
-                "host": "localhost",
-                "port": 5678
-            },
-            "justMyCode": true
-        }
+      {
+        "name": "Python: Django",
+        "type": "python",
+        "request": "attach",
+        "connect": {
+          "host": "localhost",
+          "port": 5678
+        },
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder}/backend",
+            "remoteRoot": "/app"
+          }
+        ],
+        "justMyCode": true
+      }
     ]
-}
+  }
