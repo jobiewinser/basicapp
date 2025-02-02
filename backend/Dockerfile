@@ -1,0 +1,26 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Copy only necessary configuration files to leverage Docker cache
+COPY pyproject.toml poetry.lock ./
+
+# Install Poetry and dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends gcc libc-dev \
+    && pip install poetry \
+    && poetry config virtualenvs.create false \
+    && poetry install --no-root \
+    && apt-get remove -y gcc libc-dev \
+    && apt-get autoremove -y \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy application code
+COPY basicapp/ basicapp/
+COPY manage.py .
+
+# Install Gunicorn as part of dependencies (add to pyproject.toml if not already there)
+RUN pip install gunicorn
+
+# Command to start the application
+CMD ["poetry", "run", "python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "-m", "gunicorn", "-b", "0.0.0.0:8000", "myapp.wsgi:application"]

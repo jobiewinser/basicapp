@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+env.bak/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Python env
+.venv
+
+# Poetry
+.mypy_cache/
+.poetry/
+
+# Logs
+*.log
+
+# Virtualenv
+.gradle/
+
+# django stuff:
+*.db
+*.sqlite3
+media
+
+# react stuff
+node_modules
+yarn-error.log
