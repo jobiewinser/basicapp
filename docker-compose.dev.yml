@@ -19,13 +19,16 @@ services:
       - db
 
   frontend:
-      build:
-        context: ./frontend
-        dockerfile: Dockerfile.dev.react
-      volumes:
-        - ./frontend:/app
-      ports:
-        - "3000:3000"
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev.react
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"  # Maps React default port
+    stdin_open: true
+    tty: true
 
   db:
     image: postgres
@@ -44,6 +47,9 @@ services:
       - ./nginx.dev.conf:/etc/nginx/nginx.conf
     ports:
       - "80:80"
+    depends_on:
+      - backend
+      - frontend
 
 volumes:
   pgdata:
