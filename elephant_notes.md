@@ -1,0 +1,1 @@
+We may have to manually process scientific papers with humans. Give some kind of reliability score for the paper (based on the source, and how well reviewed etc?), maunally remove formatting from the paper, and possibly tokenise it?
