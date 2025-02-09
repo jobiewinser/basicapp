@@ -18,6 +18,14 @@ services:
     depends_on:
       - db
 
+  ai-model:
+    build:
+      context: ./ai
+      dockerfile: Dockerfile.dev
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+
   frontend:
     build:
       context: ./frontend
