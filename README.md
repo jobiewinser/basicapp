@@ -2,9 +2,9 @@
 docker run --rm -v "${PWD}:/app" -w /app python:3.10-slim sh -c "cd backend && pip install poetry && poetry add {package} && poetry lock"
 
 - To add an npm package:
-cd frontend
+cd frontend/my-app
 rm package.lock.json
-rm nodemodules
+rm nodemodules (this might make it take a long time, maybe optional?)
 npm install {package} --save
 
 - To start the whole project while devving

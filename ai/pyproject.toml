@@ -12,6 +12,8 @@ torchvision = "^0.21.0"
 torchaudio = "^2.6.0"
 transformers = "^4.48.3"
 accelerate = "^0.26.0"
+fastapi = "^0.115.8"
+uvicorn = "^0.34.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

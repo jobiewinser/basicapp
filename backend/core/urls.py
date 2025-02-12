@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import HomeView
+from .views import CalculateConfidenceView, get_csrf_token
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
+    path('calculate-confidence/', CalculateConfidenceView.as_view(), name='calculate-confidence'),
+    path('get-csrf-token/', get_csrf_token, name='get_csrf_token'),
 ]

@@ -7,13 +7,14 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-django = "^3.2"
-djangorestframework = "^3.12"
+django = "^5.1.6"
 gunicorn = "^20.0.4"  # Add this line
 torch = "^2.6.0"
 torchvision = "^0.21.0"
 torchaudio = "^2.6.0"
 transformers = "^4.48.3"
+requests = "^2.32.3"
+django-cors-headers = "^4.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

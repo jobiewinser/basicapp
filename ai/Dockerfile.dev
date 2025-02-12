@@ -20,4 +20,4 @@ COPY . /app
 
 RUN pip install poetry
 
-CMD ["poetry", "run", "python", "aimodel.py"]
+CMD ["poetry", "run", "uvicorn", "aimodel:app", "--host", "0.0.0.0", "--port", "8000"]

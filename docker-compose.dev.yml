@@ -25,6 +25,8 @@ services:
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - "8001:8000"  # Make sure this port is not conflicting with others
 
   frontend:
     build:
